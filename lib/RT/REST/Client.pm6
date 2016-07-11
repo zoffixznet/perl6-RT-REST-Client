@@ -47,18 +47,18 @@ my class TicketsActions {
 }
 
 method search (
-    Date() :$since, Date() :$before, Str :$queue = 'perl6',
-    :@status, :@not-status,
+    Dateish :$since, Dateish :$before, Str :$queue = 'perl6',
+    :$status, :$not-status,
 ) {
-    @not-status = 'resolved', 'rejected'
-        unless @status or @not-status;
+    $not-status = ('resolved', 'rejected')
+        unless $status or $not-status;
 
     my $cond = join " AND ",
-        ("Created >= '$since'"  if $since),
-        ("Created <= '$before'" if $since),
-        @status.map({"Status = '$_'"}),
-        @not-status.map({"Status != '$_'"});
-    say $cond;
+        ("Created >= '$since.yyyy-mm-dd()'"  if $since ),
+        ("Created <= '$before.yyyy-mm-dd()'" if $before),
+        $status.map({"Status = '$_'"}),
+        $not-status.map({"Status != '$_'"});
+    $cond;
     # my $url = "$!server/search/ticket?user=$!user&pass=$!pass&orderby=-Created"
     #     ~ "&query=" ~ uri-escape("Queue = '$queue' AND ($cond)");
     #
