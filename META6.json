@@ -3,7 +3,12 @@
     "name"         : "RT::REST::Client",
     "version"      : "1.001001",
     "description"  : "Use Request Tracker's (RT) REST client interface",
-    "depends"      : [ ],
+    "depends"      : [
+        "IO::Socket::SSL",
+        "HTTP::UserAgent",
+        "URI",
+        "URI::Escape"
+    ],
     "test-depends" : [ "Test", "Test::META" ],
     "provides"     : {
         "RT::REST::Client" : "lib/RT/REST/Client.pm6"
