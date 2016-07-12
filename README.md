@@ -4,6 +4,32 @@
 
 RT::REST::Client - Use Request Tracker's (RT) REST client interface
 
+# TABLE OF CONTENTS
+- [NAME](#name)
+- [SYNOPSIS](#synopsis)
+- [EARLY RELEASE](#early-release)
+- [LOGIN CREDENTIALS](#login-credentials)
+- [METHODS](#methods)
+    - [`.new`](#new)
+        - [`:user`](#user)
+        - [`:pass`](#pass)
+        - [`:rt-url`](#rt-url)
+    - [`.search`](#search)
+        - [`:after`](#after)
+        - [`:before`](#before)
+        - [`:queue`](#queue)
+        - [`:status`](#status)
+        - [`:not-status`](#not-status)
+- [`RT::REST::Client::Ticket` OBJECT](#rtrestclientticket-object)
+    - [`.id`](#id)
+    - [`.tags`](#tags)
+    - [`subject`](#subject)
+    - [`url`](#url)
+- [REPOSITORY](#repository)
+- [BUGS](#bugs)
+- [AUTHOR](#author)
+- [LICENSE](#license)
+
 # SYNOPSIS
 
 ```perl6
