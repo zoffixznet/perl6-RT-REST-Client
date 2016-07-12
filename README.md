@@ -138,6 +138,7 @@ be stripped.
 ## `url`
 
 The URL of the ticket.
+
 ----
 
 # REPOSITORY
