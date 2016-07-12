@@ -34,7 +34,7 @@ RT::REST::Client - Use Request Tracker's (RT) REST client interface
 
 ```perl6
 
-my RT::REST::Client $rt .= new: :user<rt@example.com>, :pass<secr3t>;
+my RT::REST::Client $rt .= new: :user<rt@example.com> :pass<secr3t>;
 printf "#%s %s %s\n\t%s\n\n",
         .id, .tags.join(' '), .subject, .url
     for $rt.search: after => Date.today.earlier: :week;
@@ -58,8 +58,8 @@ and the CLI Password section should be on the right side of the page.
 
 ```perl6
     my RT::REST::Client $rt .= new:
-        :user<rt@example.com>,
-        :pass<secr3t>,
+        :user<rt@example.com>
+        :pass<secr3t>
         :rt-url<https://rt.example.com/REST/1.0> # optional
     ;
 ```
