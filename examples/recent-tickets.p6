@@ -9,4 +9,6 @@ say $rt.search:
     :since(Date.today.earlier: :week)
     :before(Date.today.earlier: :2weeks)
     :@status
-    :not-status<stale>
+    :not-status<stale>;
+
+say now - INIT now;
