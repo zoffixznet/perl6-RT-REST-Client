@@ -23,8 +23,8 @@ RT::REST::Client - Use Request Tracker's (RT) REST client interface
 - [`RT::REST::Client::Ticket` OBJECT](#rtrestclientticket-object)
     - [`.id`](#id)
     - [`.tags`](#tags)
-    - [`subject`](#subject)
-    - [`url`](#url)
+    - [`.subject`](#subject)
+    - [`.url`](#url)
 - [REPOSITORY](#repository)
 - [BUGS](#bugs)
 - [AUTHOR](#author)
@@ -74,7 +74,7 @@ Creates a new `RT::REST::Client` object. Takes the following named arguments:
 
 **Mandatory.** Your RT password. Note that your regular web login likely won't
 work. You need to set up the CLI password. See [LOGIN CREDENTIALs
-section](#LOGIN_CREDENTIALS) for details.
+section](#login-credentials) for details.
 
 ### `:rt-url`
 
@@ -97,7 +97,7 @@ section](#LOGIN_CREDENTIALS) for details.
 ```
 
 Performs a search for tickets and returns a possibly-empty list of
-`RT::REST::Client::Ticket` objects. Returns a `Failure` on network errors
+[`RT::REST::Client::Ticket` objects](#rtrestclientticket-object). Returns a `Failure` on network errors
 or if RT's response was not understood (e.g. incorrect login credentials).
 Takes the following named arguments:
 
@@ -156,12 +156,12 @@ A possibly-empty list of ticket's tags. Currently, these are obtained
 from the braketed markers (e.g. `[FOO]`) at the start of the ticket's subject
 line. The brakets are retained as part of the tag.
 
-## `subject`
+## `.subject`
 
 The subject line of the ticket. If any tags are present at the start, they will
 be stripped.
 
-## `url`
+## `.url`
 
 The URL of the ticket.
 
