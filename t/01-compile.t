@@ -1,5 +1,6 @@
 use lib 'lib';
-use use RT::REST::Client;
+use Test;
+use RT::REST::Client;
 
 ok 1;
 
