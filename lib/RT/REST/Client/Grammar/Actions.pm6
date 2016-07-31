@@ -19,7 +19,7 @@ class Tickets {
         for $<ticket> -> $ticket {
             @tickets.push: RT::REST::Client::Ticket.new:
                 id       => +.<id>,
-                tags     => .<tag>».Str.list,
+                tags     => .<tag>.list.map({.<tag-name>.Str}),
                 subject  => ~.<subject>,
                 url      => $!ticket-url ~ +.<id> ~ '#ticket-history',
             given $ticket;
