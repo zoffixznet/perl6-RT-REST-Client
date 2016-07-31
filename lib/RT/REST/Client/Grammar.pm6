@@ -8,6 +8,6 @@ grammar Tickets {
         ]
     }
     token header { 'RT/' [\d+]**3 % '.' \s+ '200 Ok' }
-    token ticket { $<id>=\d+ ':' <.ws> <tag>* <.ws>? $<subject>=\N+ }
+    token ticket { $<id>=\d+ ':' <.ws> [<tag> <.ws>?]* <.ws>? $<subject>=\N+ }
     token tag { '[' ~ ']' $<tag-name>=.+? }
 }
